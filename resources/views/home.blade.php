@@ -5,35 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task | Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <!link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Daily Task App</h1>
-                <form action="" method="post">
-                    <input type="text">
-                    <form action="">
-                        <table border:1px>
-                            <tr>
-                                <th>No</th>
-                                <th>Task</th>
-                                <th>is Completed</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>I have to sleep</td>
-                                <td>Not yet</td>
-                                <td><button class="btn-primary" type="Submit">Mark as Completed</button></td>
-                            </tr>
-                        </table>
-                    </form>
-                </form>
-            </div>
+        <div class="text-center">
+            <h1>Daily Task App</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="" method="post">
+                            <input type="text" class="form-control" placeholder="Enter your Task"><br>
+                            <input type="submit" class="btn btn-primary" value="Save">
+                            <input type="submit" class="btn btn-warning" value="Clear">
+                            <br>
+                            <form action="">
+                                <table class="table table-dark">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Task</th>
+                                        <th>is Completed</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>I have to sleep</td>
+                                        <td>Not yet</td>
+                                        <td><input class=" btn btn-primary" type="Submit" value="Mark as Completed"></input></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </form>
+                    </div>
+                </div>
         </div>
-        
     </div>
 
 </body>
