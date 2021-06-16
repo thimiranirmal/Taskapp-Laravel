@@ -37,12 +37,20 @@
                                     <th>is Completed</th>
                                     <th>Action</th>
                                 </tr>
+                                @foreach($taskall as $task)
                                 <tr>
-                                    <td>1</td>
-                                    <td>I have to sleep</td>
-                                    <td>Not yet</td>
+                                    <td>{{$task->id}}</td>
+                                    <td>{{$task->task}}</td>
+                                    <td>
+                                    @if($task->iscompleted)
+                                    <p class="btn-success">Completed</p>
+                                    @else
+                                    <p class="btn-success">Not Completed</p>
+                                    @endif
+                                    </td>
                                     <td><input class=" btn btn-primary" type="Submit" value="Mark as Completed"></input></td>
                                 </tr>
+                                @endforeach
                             </table>
                         </form>
                         

@@ -14,7 +14,8 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/home', function () {
+    $data=App\Models\Task::all();
+    return view('home')->with('taskall',$data) ;
 });
 Route::post('/saveTask','TaskController@store');
