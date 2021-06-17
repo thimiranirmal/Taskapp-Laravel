@@ -19,7 +19,8 @@
                     <div class="col-md-12">
                         <form method="post" action="/saveTask" >
                         {{csrf_field()}}
-                            <input type="text" name="task"  class="form-control" placeholder="Enter your Task"><br>
+                            <input type="text" name="task"  class="form-control" placeholder="Enter your Task">
+                            <br>
                             @foreach($errors->all() as $error)
                             <div class="alert alert-danger" role="alert">
                             {{$error}}
@@ -29,7 +30,7 @@
                             <input type="button" class="btn btn-warning" value="Clear">
                         </form>
                         <br>
-                        <form action="">
+                        <form action="get">
                             <table class="table table-dark">
                                 <tr>
                                     <th>No</th> 
@@ -45,10 +46,19 @@
                                     @if($task->iscompleted)
                                     <p class="btn-success">Completed</p>
                                     @else
-                                    <p class="btn-success">Not Completed</p>
+                                    <p class="btn-warning">Not Completed</p>
                                     @endif
                                     </td>
-                                    <td><input class=" btn btn-primary" type="Submit" value="Mark as Completed"></input></td>
+                                    <td>
+                                    @if($task->iscompleted)
+                                        <a href="/marknotdone/{{$task->id}}" class="btn btn-danger">Mark as Not Completed</a>
+                                    @else
+                                        <a href="/markdone/{{$task->id}}" class="btn btn-primary">Mark as Completed</a>
+                                    @endif
+                                    <a href="/update/{{$task->id}}" class="btn btn-success">Update</a>
+                                    <a href="/delete/{{$task->id}}" class="btn btn-defult">Delete</a>
+                                    </td>
+                                    
                                 </tr>
                                 @endforeach
                             </table>

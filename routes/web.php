@@ -14,8 +14,14 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     $data=App\Models\Task::all();
     return view('home')->with('taskall',$data) ;
 });
 Route::post('/saveTask','TaskController@store');
+
+Route::get('/markdone/{id}','TaskController@completed');
+Route::get('/marknotdone/{id}','TaskController@notcompleted');
+Route::get('/delete/{id}','TaskController@delete');
+Route::get('/update/{id}','TaskController@updatetask');
+Route::post('/updatetask','TaskController@updatetasks');
